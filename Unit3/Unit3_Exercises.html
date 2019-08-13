@@ -9,26 +9,31 @@
             var carTypes = ["Chrysler", "Ford", "Toyota"];
             document.writeln("<b>Exercise 1</b> - ");
             document.write(carTypes);
-            // Exer2();
+            Exer2();
         }
 
         function Exer2 (){
 
             var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
            
-            document.writeln("<p><b>Exercise 2 - </b>");
+            document.writeln("<p><b>Exercise 2 - </b>" + days + "</p>");
             
-            document.write(days + "</p>");
-            var i = days.length * 1;
+            var i = days.length - 1;
 
-            while ( i <= 0){
-                document.writeln(days[i]);
-                i++;
+            document.writeln("<p>");
+            while(i >= 0) {
+                document.writeln(days[i] + " ");
+                i--;
             }
+            document.write("</p>");
+        }
+
+        function Exer3(){
+            
         }
         </script>
     </head>
-    <body onload="Exer2()">
+    <body onload="Exer1()">
 
     </body>
 </html>
