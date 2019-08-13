@@ -7,8 +7,7 @@
         function Exer1 (){
 
             var carTypes = ["Chrysler", "Ford", "Toyota"];
-            document.writeln("<b>Exercise 1</b> - ");
-            document.write(carTypes);
+            document.writeln("<b>Exercise 1</b> " + carTypes);
             Exer2();
         }
 
@@ -16,20 +15,31 @@
 
             var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
            
-            document.writeln("<p><b>Exercise 2 - </b>" + days + "</p>");
+            document.writeln("<p><b>Exercise 2</b><br>" + days);
             
             var i = days.length - 1;
 
-            document.writeln("<p>");
+            document.writeln("<br>");
             while(i >= 0) {
                 document.writeln(days[i] + " ");
                 i--;
             }
             document.write("</p>");
+            Exer3();
         }
 
         function Exer3(){
-            
+            var nums = [];
+
+            for(var i = 100; i <= 1000; i += 100) {
+                nums.push(i);
+            }
+            document.writeln("<p><b>Exercise 3</b><br>");
+            for(var i = 0; i < nums.length; i++) {
+                document.writeln("Element at index: " + i + ": " + nums[i] + "<br>");
+            }
+            document.writeln(nums[11]);
+            document.writeln("</p>")
         }
         </script>
     </head>
