@@ -43,14 +43,40 @@
         }
 
         function Exer4 (){
-            var gradebook = [];
-            gradebook[0].push = ["Ron", "Bob", "Craig"];
-            gradebook[1].push = [["A", "B", "A", "B"], ["B", "B", "C", "B"], ["C", "C", "B", "C"]];
+            var gradebook = 
+            [
+                ["Ron", "Bob", "Craig"], 
+            [
+                ["A", "B", "A", "B"], 
+                ["B", "B", "C", "B"],
+                ["C", "C", "B", "C"] 
+            ]
+        ];
+
+        // for(var i = 0; i < gradebook[1].length; i++){
+        //     var str = gradebook[1][i];
             
+        //     for(var j = 0; j < str.length; j++) {
+        //         // offsetting by one so it would make sense to user
+        //         document.write("Test Number: " + (i + 1) + " Grade: " + str[j] + "<br>");
+        //     }
+        //     document.writeln("<br>");
+        // }
+        
+        for(var i = 0; i < gradebook[0].length; i++){
+            var str = gradebook[0][i];
+            
+            for(var j = 0; j < str.length; j++) {
+                // offsetting by one so it would make sense to user
+                document.write("Student Number: " + (i + 1) + " Grade: " + gradebook[1][i][j] + "<br>");
+            }
+            document.writeln("<br>");
+        }
+
         }
         </script>
     </head>
-    <body onload="Exer1()">
+    <body onload="Exer4()">
 
     </body>
 </html>
