@@ -15,16 +15,14 @@
 
             var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
            
-            document.writeln("<p><b>Exercise 2</b><br>" + days);
+            document.writeln("<br><b>Exercise 2</b><br>" + days);
             
             var i = days.length - 1;
 
-            document.writeln("<br>");
             while(i >= 0) {
                 document.writeln(days[i] + " ");
                 i--;
             }
-            document.write("</p>");
             Exer3();
         }
 
@@ -34,12 +32,11 @@
             for(var i = 100; i <= 1000; i += 100) {
                 nums.push(i);
             }
-            document.writeln("<p><b>Exercise 3</b><br>");
+            document.writeln("<b>Exercise 3</b><br>");
             for(var i = 0; i < nums.length; i++) {
                 document.writeln("Element at index: " + i + ": " + nums[i] + "<br>");
             }
             document.writeln(nums[11]);
-            document.writeln("</p>")
 
             Exer4();
         }
@@ -55,7 +52,7 @@
             ]
         ];
         
-        document.write("<p><b>Exercise 4</b></p>")
+        document.write("<b>Exercise 4</b><br>")
         for(var i = 0; i <= gradebook[0].length; i++){
             
             for(var j = 0; j <= gradebook[0][i].length; j++) {

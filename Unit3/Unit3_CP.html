@@ -7,16 +7,17 @@
         
         function Task1 () {
             var salesRegions = [[],[],[],[]];
-            
-            salesRegions.forEach(function (element) {
+        
+            salesRegions[0][0] = "North";
+            salesRegions[1][0] = "West";
+            salesRegions[2][0] = "East";
+            salesRegions[3][0] = "West";
 
+            document.write("<b>unit3_task1</b><br>");
+            salesRegions.forEach(function (element) {
+                document.write(element[0]);
             })
 
-            // document.writeln("unit3_task1<br>");
-            // salesRegions[0].forEach(function (element) {
-            //     document.writeln(element);
-            // })
-            // document.writeln("<br><br>");
             Task2(salesRegions);
         }
 
@@ -26,15 +27,46 @@
             salesRegions[2].push("Mitch", "Paul", "Ralph");
             salesRegions[3].push("Eddy", "Hank", "Rudy");
 
-            document.write("unit3_task2<br>");
-            for(var i = 0; i < salesRegions.lenth; i++) {
-                document.writeln("SalesRegion: " + salesRegions[i] + "<br>");
-                for(var j = 0; j < salesRegions[i]; j++) {
-                    document.writeln("Salesman: " + salesRegions[i][j] + "<br>");
+            document.write("<br><b>unit3_task2</b><br>");
+            for(var i = 0; i < salesRegions.length; i++) {
+                document.write("SalesRegion: " + salesRegions[i][0] + "<br>");
+                for(var j = 1; j < salesRegions[i].length; j++) {
+                    document.write("Salesman: " + salesRegions[i][j] + "<br>");
                 }
-                document.writeln("<br>");
             }
-            document.write(salesRegions);
+
+            Task3(salesRegions);
+        }
+
+        function Task3(salesRegions) {
+            var salesTeam = new Array();
+            
+            for(var i = 1; i < salesRegions[0].length; i ++) {
+                salesTeam.push(salesRegions[0][i]);
+            }
+
+            document.write("<b>unit3_task3</b><br>");
+            var numTeam = "There are xx sales team members.";
+            document.writeln(numTeam.replace("xx", salesTeam.length) + "<br>");
+
+            for(var i = 1; i < salesRegions[1].length; i ++) {
+                salesTeam.push(salesRegions[1][i]);
+            }
+            document.writeln(numTeam.replace("xx", salesTeam.length) + "<br>");
+
+            if (salesTeam.find(function(element){
+                return element == "Will";
+            })) {
+                document.writeln("Will is in the list.<br>");
+            }
+            else {
+                document.writeln("Will is not in the list.<br>");
+            }
+
+            salesTeam.pop("Ed");
+            salesTeam.pop("Earl");
+            document.writeln(numTeam.replace("xx", salesTeam.length) + "<br>");
+            document.writeln(salesTeam);
 
         }
         
