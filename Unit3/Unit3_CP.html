@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>IT 232 Unit 3 Exercises Fike</title>
+        <script type="text/javascript">
+        
+        function Task1 () {
+            var salesRegions = [[],[],[],[]];
+            
+            salesRegions.forEach(function (element) {
+
+            })
+
+            // document.writeln("unit3_task1<br>");
+            // salesRegions[0].forEach(function (element) {
+            //     document.writeln(element);
+            // })
+            // document.writeln("<br><br>");
+            Task2(salesRegions);
+        }
+
+        function Task2(salesRegions){
+            salesRegions[0].push("Bob", "Will", "Ed");
+            salesRegions[1].push("Rob", "Earl", "Bill");
+            salesRegions[2].push("Mitch", "Paul", "Ralph");
+            salesRegions[3].push("Eddy", "Hank", "Rudy");
+
+            document.write("unit3_task2<br>");
+            for(var i = 0; i < salesRegions.lenth; i++) {
+                document.writeln("SalesRegion: " + salesRegions[i] + "<br>");
+                for(var j = 0; j < salesRegions[i]; j++) {
+                    document.writeln("Salesman: " + salesRegions[i][j] + "<br>");
+                }
+                document.writeln("<br>");
+            }
+            document.write(salesRegions);
+
+        }
+        
+        </script>
+    </head>
+    <body onload="Task1()">
+
+    </body>
+</html>
