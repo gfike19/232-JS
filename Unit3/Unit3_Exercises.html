@@ -40,6 +40,8 @@
             }
             document.writeln(nums[11]);
             document.writeln("</p>")
+
+            Exer4();
         }
 
         function Exer4 (){
@@ -52,31 +54,22 @@
                 ["C", "C", "B", "C"] 
             ]
         ];
-
-        // for(var i = 0; i < gradebook[1].length; i++){
-        //     var str = gradebook[1][i];
-            
-        //     for(var j = 0; j < str.length; j++) {
-        //         // offsetting by one so it would make sense to user
-        //         document.write("Test Number: " + (i + 1) + " Grade: " + str[j] + "<br>");
-        //     }
-        //     document.writeln("<br>");
-        // }
         
-        for(var i = 0; i < gradebook[0].length; i++){
-            var str = gradebook[0][i];
+        document.write("<p><b>Exercise 4</b></p>")
+        for(var i = 0; i <= gradebook[0].length; i++){
             
-            for(var j = 0; j < str.length; j++) {
-                // offsetting by one so it would make sense to user
+            for(var j = 0; j <= gradebook[0][i].length; j++) {
                 document.write("Student Number: " + (i + 1) + " Grade: " + gradebook[1][i][j] + "<br>");
             }
             document.writeln("<br>");
         }
 
+        document.write(gradebook[0]);
+
         }
         </script>
     </head>
-    <body onload="Exer4()">
+    <body onload="Exer1()">
 
     </body>
 </html>
