@@ -4,46 +4,78 @@
         <meta charset="ISO-8859-1">
         <title>IT 232 Unit 4 Exercises Fike</title>
         <script type="text/javascript">
-        function Exer1(){
-            var cars = new Map();
-            cars.set("Toyota",["Camery", "Blue"])
-            document.writeln("Testing testing 1 2 3");
+
+function display(values){
+            document.writeln(values + "<br>");
         }
-        var fruit = new Map();
-        function Exer2() {
-            var fruName = document.getElementById('fruName').value;
-            var quant = document.getElementById('quant').value;
 
-            fruit[fruName] = quant;
-            // for(var key in fruit) {
-            //     var value = fruit[key];
-            //     document.getElementById("allFruit").innerHTML = fruit.keys;
-            // }
+        function Exer1(){
+            var cars = [];
 
-            // doesn't work cause fruit is a mpa
-            document.getElementById("allFruit").innerHTML = fruit.prototype.array.forEach(element => {
-                document.writeln(element);
+            var s1 = new Set();
+            s1.add("Toyota");
+            s1.add("Camery");
+            s1.add("Blue");
+            cars.push(s1);
+
+            var s2 = new Set(["Ford", "Mustang", "Red"]);
+            cars.push(s2)
+
+            var s3 = new Set(["Chevrolet", "Nova", "Yellow"]);
+            cars.push(s3);
+
+            document.writeln("<b>Exercise 1</b><br>");
+            cars.forEach(function (element){
+                element.forEach(function(val){
+                    document.writeln(val);
+                })
+                document.writeln("<br>");
             });
-//             fruit.forEach(function (element) {
+            Exer2();
+        }
 
-// });
+        function Exer2() {
 
-            // below does nothing at all
-            // console.log(fruit);
-            // window.alert(fuit);
+            var fruit = new Map([
+                ["kiwis", 2], ["oranges", 3], ["applies", 1]
+            ]);
+
+            document.writeln("<b>Exercise 2</b><br>");
+            for (var [key, value] of fruit) {
+                document.writeln("There are " + value + " " + key + "<br>");
+                }
+                Exer3();
+        }
+
+        function Exer3(){
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            document.writeln("<b>Exercise 3</b><br>");
+            document.writeln(days + "<br>");
+
+            document.writeln(days.reverse() + "<br>");
+
+            //reverse the array back to orignal possition before making a copy
+            days.reverse();
+            var WorkingDays = days.slice();
+            document.writeln(WorkingDays);
+
+            var index = WorkingDays.find("Saturday");
+            WorkingDays.splice(index.indexOf(), 1);
+
+            index = WorkingDays.find("Sunday");
+            WorkingDays.splice(index.indexOf(), 1);
+            
+            document.writeln("<br>" + WorkingDays);
+            // playing with copyWithin
+            // days.reverse();
+        //     var WorkingDays = [];
+        //    days.copyWithin(0, 1,6);
+
+        //     document.writeln(days);
         }
 
         </script>
     </head>
-    <!-- <body onload="Exer1()"> -->
-    <body> 
-        <!-- <span onload="Exer1()"></span> -->
-        <br>
-        <form method="POST">
-            Enter name of fruit: <input type="test" name="fruName" id="fruName"/><br>
-            Enter quantity: <input type="number" name="quant" id="quant"/><br>
-            <input type="button" value=" Submit " onclick="Exer2()">
-        </form><br>
-        <span name="allFruit" id="allFruit"></span>
+    <body onload="Exer1()">
     </body>
 </html>
