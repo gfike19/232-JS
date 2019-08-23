@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="ISO-8859-1">
-        <title>IT 232 Unit 4 Exercises Fike</title>
+        <title>IT 232 Unit 4 Exercises</title>
         <script type="text/javascript">
 
 function display(values){
@@ -59,11 +59,9 @@ function display(values){
             var WorkingDays = days.slice();
             document.writeln(WorkingDays);
 
-            var index = WorkingDays.find("Saturday");
-            WorkingDays.splice(index.indexOf(), 1);
+            WorkingDays.splice(WorkingDays.indexOf("Saturday"), 1);
 
-            index = WorkingDays.find("Sunday");
-            WorkingDays.splice(index.indexOf(), 1);
+            WorkingDays.splice(WorkingDays.indexOf("Sunday"), 1);
             
             document.writeln("<br>" + WorkingDays);
             // playing with copyWithin
@@ -72,10 +70,36 @@ function display(values){
         //    days.copyWithin(0, 1,6);
 
         //     document.writeln(days);
+        Exer4();
+        }
+
+        function Exer4 (){
+            var stack = [];
+            stack.push(10, 24, 31, 45, 19, 76);
+            document.writeln("<b>Exercise 4</b><br>");
+            document.writeln(stack.length + "<br>");
+            stack.pop();
+            stack.pop();
+            stack.pop();
+            document.writeln(stack.length + "<br>");
+            document.writeln(stack[stack.length - 1] + "<br>");
+            Exer5();
+        }
+
+        function Exer5 (){
+            var q = [];
+            document.writeln("<b>Exercise 5</b><br>");
+            q.push(10, 24, 31, 45, 19, 76);
+            document.writeln(q.length + "<br>");
+            q.shift();
+            q.shift();
+            document.writeln(q);
+            document.writeln(q.length + "<br>");
+            document.writeln(q[0] + "<br>");
         }
 
         </script>
     </head>
-    <body onload="Exer1()">
+    <body onload="Exer5()">
     </body>
 </html>

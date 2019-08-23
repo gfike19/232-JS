@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>IT 232 Unit 4 Exercises Fike</title>
+        <script type="text/javascript">
+            function Task1() {
+                var max = 5;
+            var addr = [];
+
+            var text = [];
+
+            const fs = require('fs');
+            fs.readFile('data.txt', (err, data) => { 
+                var temp = data.toString().split(",");
+                text.push(temp);
+            }) ;
+            text.forEach(function (element) {
+                document.writeln(element + "<br>");
+            })
+
+            // for(var i = 0; i < max; i++){
+
+            // }
+            }
+
+        </script>
+    </head>
+    <body onload="Task1()">
+    </body>
+</html>
