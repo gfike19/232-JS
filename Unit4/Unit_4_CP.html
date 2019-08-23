@@ -5,25 +5,51 @@
         <title>IT 232 Unit 4 Exercises Fike</title>
         <script type="text/javascript">
             function Task1() {
-                var max = 5;
-            var addr = [];
+            const max = 5;
+            var addrs = [["Name"], ["Address"], ["City"], ["State"], ["Zip"]];
+            
+           var Names = ["Bob", "Bill", "Ed", "Wally", "George"];
+            var Addresses = ["123 Elm St", "456 Main St", "986 Skidmore Rd", "568 Lakeside Terrace", "9863 Waldorf Ave"];
+            var Cities = ["Houston", "New Orleans", "Tampa", "Atlanta", "Richmond"];
+            var States = ["Texas", "Louisiana", "Florida", "Georgia", "Virginia"];
+            var Zips = ["23664", "34654", "34646", "56848", "86534"];
 
-            var text = [];
-
-            const fs = require('fs');
-            fs.readFile('data.txt', (err, data) => { 
-                var temp = data.toString().split(",");
-                text.push(temp);
-            }) ;
-            text.forEach(function (element) {
-                document.writeln(element + "<br>");
-            })
-
-            // for(var i = 0; i < max; i++){
-
-            // }
+            for(var i = 0; i < max; i ++) {
+               addrs[i][0] = Names[i];
+               addrs[i][1] = Addresses[i];
+               addrs[i][2] = Cities[i];
+               addrs[i][3] = States[i];
+               addrs[i][4] = Zips[i];
             }
 
+            document.writeln("<b>Task 1</b><br>")
+            for(var i = 0; i < addrs.length; i++){
+                document.writeln((i + 1) + " ")
+                for(var j = 0; j < addrs.length; j++){
+                    document.writeln(addrs[i][j] + " ")
+                }
+                document.writeln("<br>");
+            }
+            Task2();
+            }
+
+            function Task2(){
+                var animalsAtTheZoo = new Map([
+                    ["racoon", 4], ["bear", 2], ["tiger",3],
+                    ["elephant", 2], ["giraffe", 3], ["zebras", 6],
+                    ["lion", 5], ["bats", 34], ["iguana", 21],
+                    ["otter", 12], ["alligator",8]
+                ]);
+
+                document.writeln("<b>Task 2</b><br>")
+                for (var [key, value] of animalsAtTheZoo) {
+                document.writeln(key + " " + value + "<br>");
+                }
+
+                document.writeln("There are " + animalsAtTheZoo.get("bats") + " bats at the zoo<br>");
+                animalsAtTheZoo.set("zebras", animalsAtTheZoo.get("zebras") - 1);
+                document.writeln("There are " + animalsAtTheZoo.get("zebras") + " zebras at the zoo");
+            }
         </script>
     </head>
     <body onload="Task1()">
